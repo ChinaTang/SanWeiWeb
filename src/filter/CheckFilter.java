@@ -5,6 +5,7 @@ import reqhead.CheckReqHead;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
 
 public class CheckFilter implements Filter {
