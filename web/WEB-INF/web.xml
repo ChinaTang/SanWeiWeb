@@ -21,5 +21,30 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/user/login</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>regist</servlet-name>
+        <servlet-class>servlete.user.RegisterServlete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>regist</servlet-name>
+        <url-pattern>/user/regist</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>checkUserName</servlet-name>
+        <servlet-class>servlete.user.CheckUserNameServlete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkUserName</servlet-name>
+        <url-pattern>/user/checkusername</url-pattern>
+    </servlet-mapping>
+    
+    <resource-ref>
+        <description>DB connection</description>
+        <res-ref-name>jdbc/SanWeiDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 
 </web-app>

@@ -1,12 +1,14 @@
 package filter;
 
 
+import databases.DataBaseTools;
 import reqhead.CheckReqHead;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class CheckFilter implements Filter {
 
