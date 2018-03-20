@@ -47,4 +47,21 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
+    <servlet>
+        <servlet-name>uploadimg</servlet-name>
+        <servlet-class>servlete.currency.FileUpLoadServlete</servlet-class>
+        <init-param>
+            <param-name>filePath</param-name>
+            <param-value>store</param-value>
+        </init-param>
+        <init-param>
+            <param-name>tempFilePath</param-name>
+            <param-value>temp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadimg</servlet-name>
+        <url-pattern>/currency/uploadimg</url-pattern>
+    </servlet-mapping>
+
 </web-app>

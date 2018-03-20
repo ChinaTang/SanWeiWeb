@@ -1,4 +1,9 @@
 package servlete.student;
 
-public class RegistStudent {
+import javax.servlet.http.HttpServlet;
+
+public class RegistStudent extends HttpServlet{
+
+
+
 }
