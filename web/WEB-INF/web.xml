@@ -24,11 +24,11 @@
     
     <servlet>
         <servlet-name>regist</servlet-name>
-        <servlet-class>servlete.user.RegisterServlete</servlet-class>
+        <servlet-class>servlete.teacher.TeacherRegisterServlete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>regist</servlet-name>
-        <url-pattern>/user/regist</url-pattern>
+        <url-pattern>/teacher/regist</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -62,6 +62,16 @@
     <servlet-mapping>
         <servlet-name>uploadimg</servlet-name>
         <url-pattern>/currency/uploadimg</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>studentRegist</servlet-name>
+        <servlet-class>servlete.student.StudentRegistServlete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>studentRegist</servlet-name>
+        <url-pattern>/student/regist</url-pattern>
     </servlet-mapping>
 
 </web-app>
