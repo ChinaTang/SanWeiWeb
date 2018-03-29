@@ -33,6 +33,9 @@ public class StudentRegistServlete extends HttpServlet{
 
     private static final String SQL_SEARCH_USER = "SELECT USER_ID FROM user_info WHERE USER_ID = ?";
 
+    private static final String SQL_ACHIEVEMENT = "insert into entered_continuation (START_SEMESTER,OVER_SEMESTER" +
+            ",STUDENT_ID,TEACHER_ID,SUBJECT_NAME,REMARKS,PAY_STATUS) VALUES(?,?,?,?,?,?,?)";
+
     private static final String IDENTITY = "student";
 
     Random rand;
@@ -42,6 +45,7 @@ public class StudentRegistServlete extends HttpServlet{
         rand = new Random();
     }
 
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         Gson gson = new Gson();
         StudentRegistReq registReq = gson.fromJson(JSONTools.getRequestPostStr(req), StudentRegistReq.class);
@@ -70,7 +74,7 @@ public class StudentRegistServlete extends HttpServlet{
 
             preparedStatement = connection.prepareStatement(SQL_USER_INFO);
             preparedStatement.setString(1, registReq.userName);
-            preparedStatement.setString(2, registReq.passWord);
+            preparedStatement.setString(2, "1234");
             preparedStatement.setString(3, userId);
             preparedStatement.setString(4, registReq.remarks);
             preparedStatement.setString(5, IDENTITY);
@@ -91,6 +95,17 @@ public class StudentRegistServlete extends HttpServlet{
             preparedStatement.setString(10, registReq.photoForBase64);
             preparedStatement.setString(11, registReq.guardianPhoto);
             preparedStatement.setString(12, userId);
+            preparedStatement.execute();
+            connection.commit();
+
+            preparedStatement = connection.prepareStatement(SQL_ACHIEVEMENT);
+            preparedStatement.setString(1, "");
+            preparedStatement.setString(2, "");
+            preparedStatement.setString(3, userId);
+            preparedStatement.setString(4, "");
+            preparedStatement.setString(5, "");
+            preparedStatement.setString(6, "");
+            preparedStatement.setString(7, "");
             preparedStatement.execute();
             connection.commit();
 

@@ -73,5 +73,34 @@
         <servlet-name>studentRegist</servlet-name>
         <url-pattern>/student/regist</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>enteredSubject</servlet-name>
+        <servlet-class>servlete.student.EnteredSubjectServlete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>enteredSubject</servlet-name>
+        <url-pattern>/student/enteredSubject</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>achievement</servlet-name>
+        <servlet-class>servlete.student.StudentAchievement</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>achievement</servlet-name>
+        <url-pattern>/student/achievement</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>searchstudent</servlet-name>
+        <servlet-class>servlete.student.SearchStudentServlete</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>searchstudent</servlet-name>
+        <url-pattern>/student/searchstudent</url-pattern>
+    </servlet-mapping>
 
 </web-app>

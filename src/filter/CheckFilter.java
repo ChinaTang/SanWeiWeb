@@ -19,6 +19,9 @@ public class CheckFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+
+        servletResponse.setCharacterEncoding("UTF-8");
+
         if(CheckReqHead.CheckPublicParam(servletRequest)
                 && CheckReqHead.CheckAccessToken((HttpServletRequest)servletRequest)){
             filterChain.doFilter(servletRequest, servletResponse);
